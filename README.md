@@ -1,5 +1,5 @@
-Composer Autload Tools
-======================
+Composer Autoload Tools
+=======================
 
 Provide a standard interface for accessing Composer's autoloader.
 

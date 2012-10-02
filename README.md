@@ -14,6 +14,19 @@ necessity. This library helps get access to the underlying Composer
 autoloader registered during runtime.
 
 
+Usage
+-----
+
+```php
+<?php
+$locator = new Dflydev\Composer\Autoload\ClassLoaderLocator;
+$loader = $locator->locate();
+```
+
+If the Composer autoloader has been installed, it will be returned.
+If it has not been installed `null` will be returned.
+
+
 Requirements
 ------------
 

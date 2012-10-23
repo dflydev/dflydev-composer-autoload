@@ -24,11 +24,16 @@ class ClassLoaderLocator
     private static $classLoader = false;
 
     /**
+     * @var ClassLoaderLocator
+     */
+    private static $classLoaderLocator = false;
+
+    /**
      * Search registered Composer ClassLoader if it is registered
      *
      * @return ClassLoader
      */
-    public static function locate()
+    public function locate()
     {
         if (false !== static::$classLoader) {
             return static::$classLoader;
@@ -41,5 +46,22 @@ class ClassLoaderLocator
         }
 
         return static::$classLoader = null;
+    }
+
+    /**
+     * Initialize static instance
+     */
+    public static function init()
+    {
+        if (false !== static::$classLoader) {
+            return;
+        }
+
+        if (false !== static::$classLoaderLocator) {
+            return;
+        }
+
+        static::$classLoaderLocator = new static;
+        static::$classLoaderLocator->locate();
     }
 }

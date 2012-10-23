@@ -21,16 +21,13 @@ Usage
 <?php
 $locator = new Dflydev\Composer\Autoload\ClassLoaderLocator;
 $loader = $locator->locate();
-
-$loader = Dflydev\Composer\Autoload\ClassLoaderLocator::locate();
 ```
 
 If the Composer autoloader has been installed, it will be returned.
 If it has not been installed `null` will be returned.
 
 All instances of `ClassLoaderLocator` will return the same Composer
-Class Loader instance even when the Class Loader Locator is instantiated
-like an object.
+Class Loader instance.
 
 
 Gotchas
@@ -39,9 +36,14 @@ Gotchas
 In some cases Composer's Class Loader may be replaced by another
 autoload implementation. The common example for this is when a
 specialized Debug Class Loader is registered on top of Composer.
-In these cases it is advised to call `locate()` immediately after
-`autload.php` is loaded to ensure that Composer's Class Loader can
+In these cases it is advised to call `init()` immediately after
+`autload.php` is required to ensure that Composer's Class Loader can
 be located.
+
+```php
+<?php
+Dflydev\Composer\Autoload\ClassLoaderLocator::init();
+```
 
 
 Requirements

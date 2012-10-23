@@ -11,37 +11,35 @@
 
 namespace Dflydev\Composer\Autoload;
 
+/**
+ * Class Loader Locator
+ *
+ * @author Beau Simensen <beau@dflydev.com>
+ */
 class ClassLoaderLocator
 {
     /**
      * @var ClassLoader
      */
-    private $classLoader = false;
+    private static $classLoader = false;
 
     /**
-     * Locate registered Composer ClassLoader if it is registered
+     * Search registered Composer ClassLoader if it is registered
      *
      * @return ClassLoader
      */
-    public function locate()
+    public static function locate()
     {
-        if (false !== $this->classLoader)
-        {
-            return $this->classLoader;
+        if (false !== static::$classLoader) {
+            return static::$classLoader;
         }
 
-        $functions = spl_autoload_functions();
-        if (false === $functions)
-        {
-            return $this->classLoader = null;
-        }
-
-        foreach ($functions as $function) {
+        foreach (spl_autoload_functions() as $function) {
             if (is_array($function) && count($function[0]) > 0 && is_object($function[0]) && 'Composer\Autoload\ClassLoader' === get_class($function[0])) {
-                return $this->classLoader = $function[0];
+                return static::$classLoader = $function[0];
             }
         }
 
-        return $this->classLoader = null;
+        return static::$classLoader = null;
     }
 }

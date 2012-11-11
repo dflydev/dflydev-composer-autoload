@@ -71,9 +71,9 @@ Direct access to Composer Class Loaders.
 
  * *Composer\Autoload\ClassLoader[]* **getClassLoaders()**:
    Get all Composer Autoload Class Loader instances.
- * *Composer\Autoload\ClassLoader* **getFirstClassLoader()**:
+ * *Composer\Autoload\ClassLoader|null* **getFirstClassLoader()**:
    Get the first Class Loader registered.
- * *Composer\Autoload\ClassLoader* **getFirstClassLoader()**:
+ * *Composer\Autoload\ClassLoader|null* **getFirstClassLoader()**:
    Get the last Class Loader registered.
 
 #### Class Loader Readers
@@ -85,9 +85,9 @@ Direct access to Composer Class Loaders.
    Class Loader Reader will be returned.
  * *ClassLoaderReaderInterface[]* **getReaders()**:
    Get Class Loader Readers for each registered Class Loader.
- * *ClassLoaderReaderInterface* **getFirstClassLoader()**:
+ * *ClassLoaderReaderInterface* **getFirstReader()**:
    Get the Class Loader Reader for the first Class Loader registered.
- * *ClassLoaderReaderInterface* **getFirstClassLoader()**:
+ * *ClassLoaderReaderInterface* **getFirstReader()**:
    Get the Class Loader Reader for the last Class Loader registered.
 
 ### ClassLoaderReaderInterface

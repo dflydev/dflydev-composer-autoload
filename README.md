@@ -134,5 +134,5 @@ Community
 If you have questions or want to help out, join us in the
 [#dflydev](irc://irc.freenode.net/#dflydev) channel on irc.freenode.net.
 
-[0]: http://getcomposer.org
-[1]: https://packagist.org/packages/dflydev/composer-autoload
+[00]: http://getcomposer.org
+[01]: https://packagist.org/packages/dflydev/composer-autoload

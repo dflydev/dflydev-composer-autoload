@@ -1,15 +1,21 @@
 Composer Autoload Tools
 =======================
 
-Provide a standard interface for accessing and reading [Composer][0]
+Provide a standard interface for accessing and reading [Composer][00]
 autoloaders.
 
+**NOTE:** This API is not yet stable and may be subject to change.
 
-#### Why?
+
+Why Does This Library Exist?
+----------------------------
 
 While it is generally not considered best practice for an application
 to be aware of underlying autoloaders, accessing the autoloader is
 sometimes a necessity.
+
+The primary use case behind the creation of this library was providing
+a [Composer implementation][02] of the [PSR-0 Resource Locator][03].
 
 
 Usage
@@ -140,3 +146,5 @@ If you have questions or want to help out, join us in the
 
 [00]: http://getcomposer.org
 [01]: https://packagist.org/packages/dflydev/composer-autoload
+[02]: https://packagist.org/packages/dflydev/psr0-resource-locator-composer
+[03]: https://packagist.org/packages/dflydev/psr0-resource-locator

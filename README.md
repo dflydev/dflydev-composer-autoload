@@ -4,7 +4,7 @@ Composer Autoload Tools
 Provide a standard interface for accessing and reading [Composer][00]
 autoloaders.
 
-**NOTE:** This API is not yet stable and may be subject to change.
+**WARNING: This API is not yet stable and may be subject to change.**
 
 
 Why Does This Library Exist?

@@ -45,26 +45,6 @@ API
 
 ### ClassLoaderLocator Class
 
-#### Static Methods
-
- * **init()**:
-   Initialize static instance.
-   
-   Can be used to ensure that everything is setup before it is actually used
-   at a later time. For example, if something may be going to modify the list
-   of registered autoloaders, this will ensure that the Composer ones can be
-   found and recorded right away.
- * **reset()**:
-   Reset the static instance.
-   
-   This effectively clears the located Class Loader instances. The next time
-   something tries to access the class loaders the list of registered
-   autoloaders will be scanned again.
- * **set(array $classLoaders)**:
-   Set the list of Class Loaders.
-   
-   This is here primarily for testing purposes.
-
 #### Class Loaders
 
 Direct access to Composer Class Loaders.
@@ -78,6 +58,9 @@ Direct access to Composer Class Loaders.
 
 #### Class Loader Readers
 
+Access to underlying Class Loaders through the Class Loader Reader
+Interface.
+
  * *ClassLoaderReaderInterface* **getReader()**:
    Get a ClassLoader Reader.
 
@@ -89,6 +72,27 @@ Direct access to Composer Class Loaders.
    Get the Class Loader Reader for the first Class Loader registered.
  * *ClassLoaderReaderInterface* **getFirstReader()**:
    Get the Class Loader Reader for the last Class Loader registered.
+
+#### Static Methods
+
+ * **init()**:
+   Initialize static instance.
+
+   Can be used to ensure that everything is setup before it is actually used
+   at a later time. For example, if something may be going to modify the list
+   of registered autoloaders, this will ensure that the Composer ones can be
+   found and recorded right away.
+ * **reset()**:
+   Reset the static instance.
+
+   This effectively clears the located Class Loader instances. The next time
+   something tries to access the class loaders the list of registered
+   autoloaders will be scanned again.
+ * **set(array $classLoaders)**:
+   Set the list of Class Loaders.
+
+   This is here primarily for testing purposes.
+
 
 ### ClassLoaderReaderInterface
 
